@@ -14,3 +14,17 @@ export const selectCartItemsCount = createSelector(
       return total + currentItem.quantity;
     }, 0)
 );
+
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.showDropdown
+);
+
+export const selectCartItemsTotalPrice = createSelector(
+  [selectCartItems],
+  cartItems =>
+    cartItems.reduce(
+      (total, currentItem) => total + currentItem.quantity * currentItem.price,
+      0
+    )
+);

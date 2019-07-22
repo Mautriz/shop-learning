@@ -7,9 +7,14 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import "./Header.scss";
 
+import { createStructuredSelector } from "reselect";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
+
 import { toggleDropdown } from "../../redux/cart/cart.actions";
 
 const Header = ({ currentUser, showDropdown, toggleDropdown }) => {
+  console.log(showDropdown);
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -38,9 +43,9 @@ const Header = ({ currentUser, showDropdown, toggleDropdown }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser,
-  showDropdown: state.cart.showDropdown
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  showDropdown: selectCartHidden
 });
 
 const mapDispatchToProps = dispatch => ({
