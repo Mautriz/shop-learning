@@ -14,7 +14,6 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { toggleDropdown } from "../../redux/cart/cart.actions";
 
 const Header = ({ currentUser, showDropdown, toggleDropdown }) => {
-  console.log(showDropdown);
   return (
     <div className="header">
       <Link className="logo-container" to="/">
