@@ -6,13 +6,13 @@ import HomePage from "./pages/homepage/HomePage";
 import ShopPage from "./pages/shop/ShopPage";
 import Header from "./components/header/Header";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/SignInAndSignUpPage";
+import Checkout from "./pages/checkout/checkout.page";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
-import Checkout from "./pages/checkout/checkout.page";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
